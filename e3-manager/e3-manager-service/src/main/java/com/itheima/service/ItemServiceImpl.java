@@ -3,7 +3,6 @@ package com.itheima.service;
 import com.itheima.mapper.ItemMapper;
 import com.itheima.pojo.EasyUIDataGridResult;
 import com.itheima.pojo.TbItem;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

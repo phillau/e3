@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.mapper.ItemCatMapper">
+    <resultMap id="ItemCatResultMap" type="com.itheima.pojo.EasyUITreeNode">
+        <id column="id" property="id"></id>
+        <result column="name" property="text"></result>
+        <result column="is_parent" property="state"></result>
+    </resultMap>
+
+    <select id="getItemCatByParentId" parameterType="int" resultMap="ItemCatResultMap">
+        select id,name,is_parent from tb_item_cat where parent_id = #{v}
+    </select>
+</mapper>

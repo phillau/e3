@@ -16,4 +16,5 @@
 	<dubbo:protocol port="20880" name="dubbo"/>
 	<!-- 声明需要暴露的服务 -->
 	<dubbo:service interface="com.itheima.service.ItemService" ref="itemServiceImpl"/>
+	<dubbo:service interface="com.itheima.service.ItemCatService" ref="itemCatServiceImpl"/>
 </beans>

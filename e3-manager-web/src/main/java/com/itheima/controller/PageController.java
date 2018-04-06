@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class PageController {
+    @RequestMapping("/")
+    public String toIndex(){
+        return "index";
+    }
+
     @RequestMapping("{jspName}")
     public String toJsp(@PathVariable String jspName){
         return jspName;
