@@ -27,4 +27,11 @@
         select count(1) from tb_item
     </select>
 
+    <insert id="saveTbItem" parameterType="com.itheima.pojo.TbItem">
+        insert into tb_item (id,cid,title,sell_point,price,num,barcode,image,created,updated) values (#{id},#{cid},#{title},#{sellPoint},#{price},#{num},#{barcode},#{image},#{created},#{updated})
+    </insert>
+
+    <insert id="saveTbItemDesc" parameterType="com.itheima.pojo.TbItemDesc">
+        insert into tb_item_desc (item_id,item_desc,created,updated) values (#{itemId},#{itemDesc},#{created},#{updated})
+    </insert>
 </mapper>
