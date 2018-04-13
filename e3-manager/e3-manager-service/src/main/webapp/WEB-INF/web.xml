@@ -5,7 +5,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
-    <display-name>e3</display-name>
+    <display-name>e3-manager-service</display-name>
     <!-- 加载spring容器 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
