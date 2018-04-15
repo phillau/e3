@@ -13,5 +13,5 @@ public interface ContentCatService {
 
     E3Result addContent(TbContent tbContent);
 
-    List<TbContent> findContentList();
+    List<TbContent> findContentList(Integer LUNBO_ID);
 }

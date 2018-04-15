@@ -40,7 +40,7 @@
         insert into tb_content (category_id,title,sub_title,title_desc,url,pic,pic2,content) values (#{categoryId},#{title},#{subTitle},#{titleDesc},#{url},#{pic},#{pic2},#{content})
     </insert>
 
-    <select id="findContentList" resultMap="TbContentMap">
-        select * from tb_content where category_id = 89
+    <select id="findContentList" resultMap="TbContentMap" parameterType="Integer">
+        select * from tb_content where category_id = #{v}
     </select>
 </mapper>
