@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.mapper.ContentCatMapper">
+    <resultMap id="ItemCatResultMap" type="com.itheima.pojo.EasyUITreeNode">
+        <id column="id" property="id"></id>
+        <result column="name" property="text"></result>
+        <result column="is_parent" property="state"></result>
+    </resultMap>
+
+    <resultMap id="TbContentMap" type="com.itheima.pojo.TbContent">
+        <id column="id" property="id"></id>
+        <result column="category_id" property="categoryId"></result>
+        <result column="sub_title" property="subTitle"></result>
+        <result column="title_desc" property="titleDesc"></result>
+    </resultMap>
+
+    <select id="contentCatTree" resultMap="ItemCatResultMap" parameterType="Long">
+        select id,name,is_parent from tb_content_category where parent_id = #{v}
+    </select>
+
+    <select id="findContentCatById" resultMap="ItemCatResultMap" parameterType="Long">
+        select id,name,is_parent from tb_content_category where id = #{v}
+    </select>
+
+    <insert id="saveContentCat" parameterType="com.itheima.pojo.TbContentCategory">
+        <selectKey keyProperty="id" order="AFTER" resultType="Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_content_category (parent_id,name,is_parent) values (#{parentId},#{name},#{isParent,jdbcType=BIT})
+    </insert>
+
+    <update id="updateContentCat" parameterType="com.itheima.pojo.TbContentCategory">
+        update tb_content_category set is_parent = #{isParent,jdbcType=BIT} where id = #{id}
+    </update>
+
+    <insert id="addContent" parameterType="com.itheima.pojo.TbContent">
+        <selectKey keyProperty="id" order="AFTER" resultType="Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_content (category_id,title,sub_title,title_desc,url,pic,pic2,content) values (#{categoryId},#{title},#{subTitle},#{titleDesc},#{url},#{pic},#{pic2},#{content})
+    </insert>
+
+    <select id="findContentList" resultMap="TbContentMap">
+        select * from tb_content where category_id = 89
+    </select>
+</mapper>

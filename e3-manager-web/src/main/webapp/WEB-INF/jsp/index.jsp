@@ -63,6 +63,9 @@
 	</div>
 <script type="text/javascript">
 $(function(){
+    $.post("/test1",{"name":"liufei","age":24},function(data){})
+    $.post("/test2","name=liufei&age=24",function(data){})
+    $.post("/test3",'{"name":"liufei","age":24}',function(data){})
 	$('#menu').tree({
 		onClick: function(node){
 			if($('#menu').tree("isLeaf",node.target)){

@@ -57,7 +57,7 @@ public class ItemController {
             map.put("message","上传失败");
             e.printStackTrace();
         }
-        System.out.println(picPath);
+        System.out.println("picPath="+picPath);
         return JsonUtils.objectToJson(map);
     }
 

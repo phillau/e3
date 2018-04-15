@@ -26,8 +26,7 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry address="192.168.203.152:2181" protocol="zookeeper"/>
-    <!--<dubbo:reference interface="com.itheima.service11.ItemService" id="itemServiceImpl" timeout="300000"/>-->
-    <!--<dubbo:reference interface="com.itheima.service11.ItemCatService" id="itemCatServiceImpl" timeout="300000"/>-->
+    <dubbo:reference interface="com.itheima.service.ContentCatService" id="aaa" timeout="300000"/>
 
     <!-- 定义文件上传解析器 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
