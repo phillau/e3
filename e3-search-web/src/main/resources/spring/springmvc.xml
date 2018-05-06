@@ -9,6 +9,9 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
+    <!-- 配置全局异常处理器 -->
+    <bean class="com.itheima.exception.GlobalExceptionHandler"/>
+
     <!-- 配置包扫描 -->
     <context:component-scan base-package="com.itheima.controller"/>
 
@@ -26,6 +29,6 @@
     <!-- 引用dubbo服务 -->
     <dubbo:application name="e3-manager-web"/>
     <dubbo:registry address="192.168.203.152:2181" protocol="zookeeper"/>
-    <!--<dubbo:reference interface="com.itheima.service.ContentCatService" id="aaa" timeout="300000"/>-->
+    <dubbo:reference interface="com.itheima.service.SearchItemService" id="a" timeout="300000"/>
 
 </beans>

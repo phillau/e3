@@ -14,8 +14,12 @@
 	<!-- 提供方应用信息，用于计算依赖关系 -->
 	<dubbo:application name="e3-search-service"/>
 	<bubbo:registry address="192.168.203.152:2181" protocol="zookeeper"/>
-	<!-- 用dubbo协议在20880端口暴露服务 -->
+	<!-- 用dubbo协议在20882端口暴露服务 -->
 	<dubbo:protocol port="20882" name="dubbo"/>
 	<!-- 声明需要暴露的服务 -->
-	<!--<dubbo:service interface="com.itheima.service.ContentCatService" ref="contentCatServiceImpl"/>-->
+	<dubbo:service interface="com.itheima.service.SearchItemService" ref="searchItemServiceImpl"/>
+
+	<bean class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+		<constructor-arg index="0" value="http://192.168.203.152:8080/solr"/>
+	</bean>
 </beans>

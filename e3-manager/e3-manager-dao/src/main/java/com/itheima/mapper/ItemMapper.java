@@ -1,5 +1,6 @@
 package com.itheima.mapper;
 
+import com.itheima.pojo.SearchItem;
 import com.itheima.pojo.TbItem;
 import com.itheima.pojo.TbItemDesc;
 import org.apache.ibatis.annotations.Param;
@@ -16,4 +17,6 @@ public interface ItemMapper {
     void saveTbItem(TbItem tbItem);
 
     void saveTbItemDesc(TbItemDesc tbItemDesc);
+
+    List<SearchItem> findSearchItem();
 }
