@@ -63,7 +63,8 @@ public class ItemController {
 
     @RequestMapping("item/save")
     public void save(TbItem tbItem,String desc){
-        tbItem.setId(IDUtils.genItemId());
+        long itemId = IDUtils.genItemId();
+        tbItem.setId(itemId);
         tbItem.setCreated(new Date());
         tbItem.setUpdated(new Date());
         itemService.saveTbItem(tbItem);
@@ -72,6 +73,6 @@ public class ItemController {
         tbItemDesc.setItemDesc(desc);
         tbItemDesc.setCreated(new Date());
         tbItemDesc.setUpdated(new Date());
-        itemService.saveTbItemDesc(tbItemDesc);
+        itemService.saveTbItemDesc(itemId,tbItemDesc);
     }
 }

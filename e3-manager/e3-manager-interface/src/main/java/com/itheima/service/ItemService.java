@@ -11,5 +11,5 @@ public interface ItemService {
 
     void saveTbItem(TbItem tbItem);
 
-    void saveTbItemDesc(TbItemDesc tbItemDesc);
+    void saveTbItemDesc(long itemId, TbItemDesc tbItemDesc);
 }

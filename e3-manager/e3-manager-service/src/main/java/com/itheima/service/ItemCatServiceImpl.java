@@ -14,7 +14,6 @@ public class ItemCatServiceImpl implements ItemCatService {
     @Override
     public List<EasyUITreeNode> getItemCatByParentId(int parentId) {
         List<EasyUITreeNode> easyUITreeNodeList =  itemCatMapper.getItemCatByParentId(parentId);
-        System.out.println("why...");
         for (EasyUITreeNode easyUITreeNode:easyUITreeNodeList) {
             easyUITreeNode.setState("1".equals(easyUITreeNode.getState())?"closed":"open");
         }

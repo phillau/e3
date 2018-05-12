@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface ItemMapper {
-    public TbItem getItemById(Long itemId);
+    TbItem getItemById(Long itemId);
 
     List<TbItem> getItems(@Param("startRow") Integer startRow, @Param("pageSize") Integer pageSize);
 
@@ -19,4 +19,6 @@ public interface ItemMapper {
     void saveTbItemDesc(TbItemDesc tbItemDesc);
 
     List<SearchItem> findSearchItem();
+
+    SearchItem findItemById(long itemId);
 }

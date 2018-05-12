@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/e3-content/e3-content-service/pom.xml" />
         <option value="$PROJECT_DIR$/e3-search/pom.xml" />
         <option value="$PROJECT_DIR$/e3-search-web/pom.xml" />
+        <option value="$PROJECT_DIR$/e3-item-web/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
