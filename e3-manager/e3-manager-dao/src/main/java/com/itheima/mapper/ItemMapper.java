@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface ItemMapper {
     TbItem getItemById(Long itemId);
+    TbItemDesc getItemDescById(Long itemId);
 
     List<TbItem> getItems(@Param("startRow") Integer startRow, @Param("pageSize") Integer pageSize);
 

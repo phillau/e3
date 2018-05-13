@@ -22,6 +22,10 @@
         select * from tb_item where id = #{v}
     </select>
 
+    <select id="getItemDescById" resultType="com.itheima.pojo.TbItemDesc" parameterType="Long">
+        select item_id itemId,item_desc itemDesc,created,updated from tb_item_desc where item_id = #{v}
+    </select>
+
     <select id="findItemById" parameterType="long" resultType="com.itheima.pojo.SearchItem">
         SELECT
         a.id,

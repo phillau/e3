@@ -2,6 +2,7 @@ package com.itheima.controller;
 
 import com.itheima.pojo.Item;
 import com.itheima.pojo.TbItem;
+import com.itheima.pojo.TbItemDesc;
 import com.itheima.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,9 @@ public class ItemController {
     public String index(@PathVariable String itemId,Model model){
         TbItem tbItem = itemService.getItemById(Long.parseLong(itemId));
         Item item = new Item(tbItem);
+        TbItemDesc tbItemById = itemService.getTbItemById(Long.parseLong(itemId));
         model.addAttribute("item",item);
+        model.addAttribute("itemDesc",tbItemById);
         return "item";
     }
 }
