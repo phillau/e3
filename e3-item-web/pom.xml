@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <!--freemarker-->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.23</version>
+        </dependency>
         <dependency>
             <groupId>com.itheima</groupId>
             <artifactId>e3-manager-interface</artifactId>
@@ -111,6 +117,10 @@
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
         </dependency>
     </dependencies>
 
