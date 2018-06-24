@@ -136,14 +136,13 @@
 			doLogin:function() {
 				$.post("/user/login", $("#formlogin").serialize(),function(data){
 					if (data.status == 200) {
-						jAlert('登录成功！',"提示", function(){
-							if (redirectUrl == "") {
-								location.href = "http://localhost:8082";
-							} else {
-								location.href = redirectUrl;
-							}
-						});
-						
+						// jAlert('登录成功！',"提示", function(){
+							// if (redirectUrl == "") {
+								location.href = "http://localhost:8083";
+							// } else {
+							// 	location.href = redirectUrl;
+							// }
+						// });
 					} else {
 						jAlert("登录失败，原因是：" + data.msg,"失败");
 					}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.mapper.TbUserMapper">
+
+    <select id="findTbUserByUsername" resultType="com.itheima.pojo.TbUser" parameterType="String" >
+        SELECT * FROM tb_user WHERE username = #{v}
+    </select>
+
+    <select id="findTbUserByPhone" resultType="com.itheima.pojo.TbUser" parameterType="String" >
+        SELECT * FROM tb_user WHERE phone = #{v}
+    </select>
+
+    <select id="findTbUserByUsernameAndPassword" resultType="com.itheima.pojo.TbUser" parameterType="String" >
+        SELECT * FROM tb_user WHERE username = #{0} AND password = #{1}
+    </select>
+
+    <insert id="addUser" parameterType="com.itheima.pojo.TbUser">
+        INSERT INTO tb_user (username,password,phone,created,updated) VALUES (#{username},#{password},#{phone},#{created},#{updated});
+    </insert>
+</mapper>

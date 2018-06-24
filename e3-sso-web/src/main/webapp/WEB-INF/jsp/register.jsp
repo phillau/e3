@@ -165,6 +165,7 @@
 		},
 		doSubmit:function() {
 			$.post("/user/register",$("#regForm_mod").serialize(), function(data){
+			    alert("...")
 				if(data.status == 200){
 					jAlert('用户注册成功，请登录！',"提示", function(){
 						REGISTER.login();
